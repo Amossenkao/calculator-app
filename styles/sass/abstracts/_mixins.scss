@@ -1,0 +1,76 @@
+@mixin font($size: 1rem, $width: normal) {
+	font-size: $size;
+	font-family: 'League Spartan', sans-serif;
+	font-weight: $width;
+}
+
+@mixin range($color, $color2) {
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	outline: none;
+	border-radius: 15px;
+	height: 1.5rem;
+	width: 4rem;
+	background-color: $color;
+	position: relative;
+
+	&::-moz-range-track {
+		background: $color;
+		border-radius: 15px;
+		height: 1.5rem;
+	}
+	&::-ms-track {
+		background: $color;
+		border-radius: 15px;
+		height: 1.5rem;
+	}
+	&::-webkit-slider-runnable-track {
+		background: $color;
+		border-radius: 15px;
+		height: 1.5rem;
+	}
+
+	&::-webkit-slider-thumb {
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		outline: none;
+		background: $color2;
+		height: 1.25rem;
+		width: 1.25rem;
+		border-radius: 50%;
+		// -webkit-transform: translate(0, 0);
+		// -moz-transform: translate(0, -50%);
+		// transform: translate(0, -50%);
+		cursor: pointer;
+	}
+
+	&::-moz-range-thumb {
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		outline: none;
+		border: none;
+		background: $color2;
+		height: 1.25rem;
+		width: 1.25rem;
+		border-radius: 50%;
+	}
+
+	&::-ms-thumb {
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		outline: none;
+		border: none;
+		background: $color2;
+		height: 1.25rem;
+		width: 1.25rem;
+		border-radius: 50%;
+	}
+}
