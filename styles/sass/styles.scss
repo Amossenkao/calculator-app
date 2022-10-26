@@ -10,7 +10,6 @@
 body {
 	@include font();
 	background-color: $main-bg;
-	padding-bottom: 3rem;
 }
 
 .root {
@@ -19,7 +18,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-	padding-bottom: 3rem;
 }
 
 .text-white {
