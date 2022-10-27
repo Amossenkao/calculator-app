@@ -42,16 +42,27 @@ buttons.click(function () {
 					) {
 						invalid(true);
 					} else {
-						inputScreen.val(
-							eval(
-								inputScreen
-									.val()
-									.replace(/x/gi, '*')
-									.replace(/,/g, '')
-							)
-								.toString()
+						let result = eval(
+							inputScreen
+								.val()
+								.replace(/x/gi, '*')
+								.replace(/,/g, '')
+						).toString();
+
+						if (result.includes('.')) {
+							const wholeNumber = result.split('.')[0];
+							const decimal = result.split('.')[1];
+							result = wholeNumber
 								.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-						);
+								.concat(`.${decimal}`);
+						} else {
+							result = result.replace(
+								/\B(?=(\d{3})+(?!\d))/g,
+								','
+							);
+						}
+
+						inputScreen.val(result);
 					}
 				}
 			} catch {
