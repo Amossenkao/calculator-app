@@ -60,15 +60,6 @@ function invalid(infinity = false) {
 		.addClass('invalid');
 }
 
-// Prevent the user from entering anything that is does not fall in the range of acceptable characters (0-9-+./*)
-document
-	.querySelector('.input-field input')
-	.addEventListener('input', function () {
-		let re = /[^-0-9+./x]+/;
-		if (re.test(this.value)) {
-			this.value = this.value.replace(re, '');
-		}
-	});
 
 this.onkeydown = function (event) {
 	if (event.key === 'Enter') {
