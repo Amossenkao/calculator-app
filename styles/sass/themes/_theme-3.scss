@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body.theme-3 {
+	background-color: $main-bg-3;
+	.root {
+		background-color: $main-bg-3;
+	}
+
+	.top-row .theme-container input[type='range'] {
+		@include range($keypad-bg-3, $key-bg-pure-cyan);
+	}
+
+	.text-white {
+		color: $text-light-yellow;
+	}
+
+	.input-field {
+		input {
+			background-color: $keypad-bg-3;
+			color: $text-light-yellow;
+		}
+	}
+
+	.buttons-container {
+		background-color: $keypad-bg-3;
+
+		.button {
+			background-color: $key-bg-dark-violet;
+			color: $text-light-yellow;
+			box-shadow: 0 5px $key-shadow-dark-magenta;
+
+			&.text-white {
+				color: $text-white;
+			}
+
+			&.delete,
+			&.reset {
+				background-color: $key-bg-violet;
+				box-shadow: 0 5px $key-shadow-magneta;
+			}
+
+			&.equal-sign {
+				background-color: $key-bg-pure-cyan;
+				box-shadow: 0 5px $key-shadow-soft-cyan;
+				color: $text-very-dark-blue;
+			}
+		}
+	}
+}

@@ -1,10 +1,12 @@
 @use './abstracts/variables' as *;
 @use './abstracts/mixins' as *;
+@use './themes/' as *;
 
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	transition: 0.25s;
 }
 
 body {
@@ -36,12 +38,22 @@ body {
 .top-row {
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-end;
+	align-items: center;
+
+	.calc h2 {
+		font-size: 2.3rem;
+	}
 
 	.theme-container {
 		display: flex;
 		align-items: flex-end;
-		gap: 1rem;
+		gap: 2rem;
+		font-weight: 700;
+
+		p {
+			margin-bottom: 7px;
+			font-size: 15px;
+		}
 
 		input[type='range'] {
 			@include range($keypad-bg, $key-bg-red);
@@ -66,10 +78,10 @@ body {
 		border-radius: 8px;
 		color: $text-white;
 		font-size: 2rem;
+		font-weight: 700;
 		padding-right: 1rem;
 		outline: none;
 		text-align: right;
-		caret-color: $key-bg-red;
 	}
 }
 
@@ -115,5 +127,21 @@ body {
 		&.equal-sign {
 			grid-column: 3 / span 2;
 		}
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.container {
+		width: 85%;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.container {
+		width: 90%;
+	}
+
+	.buttons-container .button {
+		font-size: 5vw;
 	}
 }

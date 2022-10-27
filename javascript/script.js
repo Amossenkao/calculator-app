@@ -1,9 +1,10 @@
-const inputScreen = $('.input-field input');
-const buttons = $('.button');
+const inputScreen = $('.input-field input'),
+	buttons = $('.button');
 let currentTheme;
+
 function getCurrentTheme() {
 	currentTheme = `theme-${$('.theme-picker input').val()}`;
-	$('.root').removeClass('theme-1 theme-2 theme-3').addClass(currentTheme);
+	$('body').removeClass('theme-1 theme-2 theme-3').addClass(currentTheme);
 }
 
 getCurrentTheme();
@@ -33,7 +34,7 @@ buttons.click(function () {
 			invalid();
 		} else {
 			try {
-				if (/[^-0-9+./x]+/.test(inputScreen.val())) {
+				if (/[^-,0-9+./x]+/.test(inputScreen.val())) {
 					invalid();
 				} else {
 					if (
@@ -42,7 +43,14 @@ buttons.click(function () {
 						invalid(true);
 					} else {
 						inputScreen.val(
-							eval(inputScreen.val().replace(/x/gi, '*'))
+							eval(
+								inputScreen
+									.val()
+									.replace(/x/gi, '*')
+									.replace(/,/g, '')
+							)
+								.toString()
+								.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 						);
 					}
 				}
@@ -59,7 +67,6 @@ function invalid(infinity = false) {
 		.val(infinity ? "can't divide by zero" : 'Invalid operation')
 		.addClass('invalid');
 }
-
 
 this.onkeydown = function (event) {
 	if (event.key === 'Enter') {
