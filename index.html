@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Amos Senkao" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Frontend Mentor | Calculator app by Amos Senkao</title>
+		<link rel="stylesheet" href="./styles/css/styles.css" />
+	</head>
+	<body>
+		<div class="root">
+			<div class="container">
+				<section class="top-row text-white">
+					<div class="calc">
+						<h2>calc</h2>
+					</div>
+					<div class="theme-container">
+						<p>THEME</p>
+						<div class="theme-picker">
+							<div class="theme-number">
+								<span>1</span><span>2</span><span>3</span>
+							</div>
+							<input class="theme" type="range" min="1" max="3" value="1" />
+						</div>
+					</div>
+				</section>
+				<section class="input-field">
+					<input type="text" disabled />
+				</section>
+				<section class="buttons-container">
+					<div class="btn"><span>7</span></div>
+					<div class="btn"><span>8</span></div>
+					<div class="btn"><span>9</span></div>
+					<div class="btn dark-blue-bg text-white delete"><span>DEL</span></div>
+					<div class="btn"><span>4</span></div>
+					<div class="btn"><span>5</span></div>
+					<div class="btn"><span>6</span></div>
+					<div class="btn"><span>+</span></div>
+					<div class="btn"><span>1</span></div>
+					<div class="btn"><span>2</span></div>
+					<div class="btn"><span>3</span></div>
+					<div class="btn"><span>-</span></div>
+					<div class="btn"><span>.</span></div>
+					<div class="btn"><span>0</span></div>
+					<div class="btn"><span>/</span></div>
+					<div class="btn"><span>*</span></div>
+					<div class="btn reset dark-blue-bg text-white">
+						<span>RESET</span>
+					</div>
+					<div class="btn equal-sign text-white red-bg"><span>=</span></div>
+				</section>
+			</div>
+		</div>
+		<script src="./javascript/script.js"></script>
+	</body>
+</html>
